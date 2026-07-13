@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "purpose": "Single source of truth for every product claim used in Etsy copy, portfolio copy, blog copy, and marketing assets. Verified directly against the merged website implementation, not from marketing drafts.",
+    "verified_by": "Release coordinator (Claude) in this session",
+    "verification_method": "Direct source-code inspection of the merged repo at commit 2d72399, plus prior live-browser testing with chrome-devtools MCP tools in the build session (Lighthouse 100/100/100/100, 25/25 unit tests, all planner edge cases exercised)",
+    "cross_referenced_against": "handoff/grok/BUILD-FACTS-TO-VERIFY.md (checklist authored by agent/grok-commerce before the build was final)"
+  },
+
+  "product_name": "Southern Suburbs Builders Website Template",
+  "product_type": "Digital download — static HTML/CSS/JavaScript website template (no backend, no build step required to run)",
+  "target_customer": "Building contractors, renovation contractors, construction companies, extension specialists, paving companies, boundary-wall contractors, project managers, local building businesses",
+  "sku": "BUILDERS-WEB-001",
+
+  "website_framework": "Vanilla HTML5, CSS3, and plain (unbundled, ES5-compatible) JavaScript. No React/Vue/Next.js/build tooling. Google Fonts (Inter, Fraunces) loaded from Google's CDN via <link> tags — the only external network dependency at page load.",
+  "supported_browsers": "Any modern evergreen browser (Chrome, Firefox, Safari, Edge) supporting CSS custom properties, CSS Grid, and ES5 JavaScript. No polyfills included; not tested against Internet Explorer.",
+
+  "responsive_behaviour": {
+    "confirmed": true,
+    "evidence": "CSS Grid/Flexbox layouts with breakpoints at 900px and 700px; live-tested at a 390px mobile viewport with chrome-devtools MCP — zero horizontal overflow after a fix (see known_issues_fixed)."
+  },
+
+  "mobile_navigation": {
+    "confirmed": true,
+    "type": "Hamburger toggle button opening a fixed off-canvas panel with all nav links, theme picker, and the primary CTA",
+    "known_issue_fixed_during_build": "A backdrop-filter on the sticky header created a new CSS containing block for the fixed-position menu, collapsing it to ~48px tall. Fixed by moving the blur to a ::before pseudo-element. Verified visually and via getBoundingClientRect() before/after."
+  },
+
+  "configuration_system": {
+    "confirmed": true,
+    "file": "site-config.js",
+    "description": "A single JS file assigning window.SITE_CONFIG. Business identity, contact details, hours, service areas, services, project types, testimonials, FAQs, gallery, team, social links, map embed URL, three theme colour palettes, and every Renovation Scope & Budget Planner rate/multiplier/currency/disclaimer live here. No edits to index.html, style.css, app.js, or planner.js are required for ordinary rebranding."
+  },
+
+  "themes": {
+    "confirmed": true,
+    "count": 3,
+    "names": ["Concrete & Brass", "Cape Clay", "Blueprint Navy"],
+    "mechanism": "CSS custom properties swapped at runtime by app.js based on site-config.js's themes object and activeTheme key; user's choice persists in localStorage (key: ssb-theme) but is not required — a default renders on first load."
+  },
+
+  "planner": {
+    "name": "Renovation Scope & Budget Planner",
+    "architecture": "planner.js is a pure calculation module (no DOM access) shared between the browser (via app.js) and the automated test suite (via Node's require()). This is why its 25 unit tests can run without a browser.",
+    "project_types_supported": [
+      "Room Renovation", "Bathroom Renovation", "Kitchen Renovation",
+      "Home Extension", "New Build", "Paving", "Boundary Wall",
+      "Commercial Renovation", "Other / Not Listed"
+    ],
+    "finish_levels": ["Essential", "Standard", "Premium", "Custom"],
+    "inputs": [
+      "project name", "project type", "length & width (m) or total floor area (m²)",
+      "number of rooms", "number of storeys", "finish level",
+      "8 trade checkboxes (demolition, structural alterations, plumbing, electrical, waterproofing, roofing, painting, flooring)",
+      "site access (easy/moderate/difficult)", "occupancy (occupied/vacant)",
+      "preferred start date", "target budget (optional)", "suburb",
+      "customer name", "customer phone or email", "additional notes"
+    ],
+    "outputs": [
+      "measured project area (or linear metres for boundary walls)",
+      "preliminary scope summary line",
+      "configurable budget range (min–max, with contingency % on the upper figure)",
+      "complexity indicator (Low/Medium/High with stated reasons)",
+      "trade checklist (project-type defaults merged with explicit selections)",
+      "assumptions list",
+      "missing-information list",
+      "photo checklist for the site visit (varies by project type)",
+      "suggested-site-inspection recommendation with reason",
+      "full text project summary"
+    ],
+    "step_count": "Not a multi-step wizard — a single form organised into 4 fieldsets (Project Basics, Scope of Work, Site & Timing, Your Contact Details), submitted once to reveal the results panel.",
+    "currency_default": "ZAR (R), en-ZA locale — configurable in site-config.js under planner.currency",
+    "not_a_binding_quote": true,
+    "disclaimer_text_present": "Both inline in the planner section (links to disclaimer.html) and in the generated summary text itself: 'This is a preliminary, non-binding estimate only...'"
+  },
+
+  "budget_estimate_behaviour": {
+    "confirmed": true,
+    "calculation": "quantity (area or linear metres) × configurable rate band × finish multiplier, adjusted by trade-selection add-on percentages and a complexity multiplier (site access × storeys × occupancy), then a contingency percentage is added to the upper bound only. Both bounds are rounded to the nearest configured increment.",
+    "guards_verified_by_test": "Never returns NaN, Infinity, or a negative figure — asserted directly across a sweep of zero/negative/huge/tiny inputs in tests/planner.test.js. Missing or unusable dimensions return a computable:false state with a human-readable reason instead of a zero/garbage number."
+  },
+
+  "disabled_budget_mode": {
+    "confirmed": true,
+    "mechanism": "Setting planner.budgetEnabled to false in site-config.js. Verified by unit test: the tool still returns a full scope, trade checklist, assumptions, and photo checklist, but the budget section states plainly that estimates are disabled and to contact the business for a custom quotation — no numeric figures are shown or fabricated."
+  },
+
+  "whatsapp_handoff": {
+    "confirmed": true,
+    "behaviour": "Opens a pre-filled wa.me link in a new tab (window.open). This is a link the visitor must click — it does NOT send a message automatically or in the background. For the Planner and quote-form flows specifically, the exact message text is shown in an explicit confirmation modal (role=dialog) first; the wa.me tab only opens after the visitor clicks 'Confirm & Send'. Verified live by patching window.open and asserting it is not called until the confirm click.",
+    "do_not_claim": "Do not say WhatsApp messages are sent automatically, or that the site has WhatsApp Business API integration — it does not. It only opens a prefilled WhatsApp web/app link."
+  },
+
+  "email_handoff": {
+    "confirmed": true,
+    "behaviour": "Opens the visitor's own email client via a mailto: link with pre-filled subject and body (URL-encoded, verified by unit test). Requires the visitor to have an email client configured — the site does not send email itself and has no backend/email server.",
+    "do_not_claim": "Do not say the site sends emails or stores submissions — there is no backend."
+  },
+
+  "print_behaviour": {
+    "confirmed": true,
+    "mechanism": "A 'Print Summary' button adds a temporary body class that (via a @media print stylesheet) hides everything except the planner's summary block, then calls window.print()."
+  },
+
+  "download_behaviour": {
+    "confirmed": true,
+    "mechanism": "A 'Download Summary' button creates a Blob from the plain-text summary and triggers a client-side file download (.txt) via a temporary <a download> element. No server involved."
+  },
+
+  "local_data_behaviour": {
+    "confirmed": true,
+    "what_is_stored": "Only the visitor's selected colour theme, in localStorage under the key ssb-theme.",
+    "what_is_not_stored": "Planner form inputs and quote-form inputs are NOT persisted anywhere — they exist only in page memory until the visitor navigates away or reloads. There is no database, no backend, and no analytics/tracking script by default.",
+    "do_not_claim": "Do not say the planner or quote form 'saves your progress' or 'remembers your project' across visits — it does not, beyond the theme choice."
+  },
+
+  "forms": {
+    "quote_form": {
+      "confirmed": true,
+      "validation": "Inline client-side validation (name required, phone-or-email format check, project type required) before the same explicit-confirm-then-WhatsApp flow as the Planner.",
+      "do_not_claim": "Do not say the quote form 'submits' or 'stores' data on a server — it only assembles a WhatsApp message that the visitor must confirm and send themselves."
+    },
+    "planner_form": {
+      "confirmed": true,
+      "validation": "Project type is required before calculation; all other fields are optional and missing ones are surfaced in the 'Missing Information' output list rather than blocking submission."
+    }
+  },
+
+  "storage_behaviour": "No database, no backend server, no CMS. This is a fully static site suitable for any static host (GitHub Pages, Netlify, Vercel static, S3, or a shared-hosting file upload).",
+
+  "deployment_requirements": {
+    "confirmed": true,
+    "requirements": "Any static file host. No build step, no environment variables, no server-side runtime required. Buyer needs only to edit site-config.js and upload the files.",
+    "hosting_domain_included": false,
+    "note_for_listing_copy": "Do not claim hosting or a domain name is included in the purchase — it is not. The buyer supplies their own hosting/domain."
+  },
+
+  "buyer_requirements": "Basic comfort editing a JavaScript object literal in a text editor (site-config.js) and uploading files to a static host. No coding framework knowledge required for ordinary rebranding; light HTML/CSS familiarity helpful only for structural changes.",
+
+  "included_files": {
+    "confirmed_from_repo": [
+      "index.html", "style.css", "site-config.js", "planner.js", "app.js",
+      "privacy.html", "terms.html", "disclaimer.html", "404.html",
+      "favicon.svg", "og-image.svg", "robots.txt", "sitemap.xml",
+      "package.json", "tests/planner.test.js"
+    ],
+    "buyer_zip_contents": "Defined in Phase 7 (seller-pack/buyer-files) — excludes .git, tests/, handoff/, scripts/release/, and any internal campaign/marketing planning documents."
+  },
+
+  "support_boundaries": "Not yet finalised in this document — set in the buyer LICENSE/support policy during Phase 7. Do not promise ongoing free customisation support, guaranteed response times, or unlimited revisions unless that policy is actually written and included in the buyer package.",
+
+  "demo_url": "https://iederees-create.github.io/southern-suburbs-builders-ct/",
+  "demo_url_status": "Not yet deployed to this URL as of writing this document (Phase 5 pending) — the release branch exists locally with the corrected canonical/OG/sitemap URLs, but main has not been updated yet.",
+
+  "disclaimers_present": [
+    "Footer disclaimer on every page: all business names, contact details, ratings, statistics, testimonials, team profiles, licence and insurance statements are fictional sample content",
+    "Estimate Disclaimer page (disclaimer.html): preliminary, non-binding estimate; site inspection may be required; not a quotation or contract",
+    "Testimonials individually tagged '(fictional)'",
+    "Gallery cards individually labelled 'Replace with a real project photo' — not presented as real completed jobs",
+    "Legal callouts on Privacy and Terms pages stating they are starting-point templates, not legal advice"
+  ],
+
+  "unsupported_claims_removed_from_original_site": [
+    "'4.9 Stars' rating (fabricated, no source)",
+    "'Fully Insured' (unverifiable claim)",
+    "'24hr Response Time' (unverifiable claim)",
+    "'200+ Jobs Completed' (fabricated statistic)",
+    "A hardcoded real WhatsApp number embedded with an unrelated web-developer sales pitch ('im interested in the website Civic Core Construction')"
+  ],
+
+  "test_results": {
+    "unit_tests": "25/25 passing — node --test tests/planner.test.js (area calculation, budget ranges, finish multipliers, invalid/zero/negative inputs never producing NaN/Infinity/negative output, summary generation, WhatsApp/email URL encoding, reset, disabled-budget mode)",
+    "html_lint": "htmlhint against all 5 HTML pages — 0 errors",
+    "lighthouse_desktop": "Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 100 (56/57 audits passed; Cumulative Layout Shift scored 0.99/1, well within the 'good' <0.1 threshold)",
+    "manual_browser_verification": "Full Planner flow driven end-to-end via chrome-devtools MCP tools against a local static server: every result field checked against hand-computed expected values; explicit-confirm-before-send verified by patching window.open; Reset verified; Cancel verified to have zero side effects; all secondary pages checked for console errors; mobile viewport checked for overflow and hamburger-menu behaviour",
+    "bugs_found_and_fixed_pre_merge": 4,
+    "note": "These results are from the pre-merge build session against the site at its original monorepo location. Re-verification against the merged repo and the live GitHub Pages deployment is Phase 4/5 of this release and will update this section if anything differs."
+  }
+}

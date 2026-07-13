@@ -108,3 +108,21 @@ Phase 8 (Etsy copy) and Phase 14 (marketing finalisation) source from
   before it is used in `seller-pack/listing/*` (Phase 3 / Phase 8).
 - Confirm no file under `handoff/grok/` or `seller-pack/drafts/` references
   a live Etsy URL, published status, or fabricated statistic.
+
+## Placeholder-marker sweep (Phase 3)
+
+Searched the full merged repo for `VERIFY_AFTER_BUILD`, `PENDING`, `TODO`,
+`TBC`, `PLACEHOLDER`, `ACTUAL_`, `EXACT_ETSY_PRODUCT_URL_PENDING_PUBLICATION`,
+`LIVE_DEMO_URL_PENDING_VERIFICATION`, `PORTFOLIO_PROJECT_URL_PENDING`,
+`BLOG_URL_PENDING`, `UDEMY_COURSE_URL_PENDING`, `CONFIRMED_PRICE_PENDING`,
+`CONFIRMED_CURRENCY_PENDING`.
+
+**Classification:**
+
+| Location | Classification | Reason |
+|---|---|---|
+| `index.html`, `style.css`, `app.js`, `planner.js`, `site-config.js`, legal pages, `robots.txt`, `sitemap.xml` | **Clean** — zero real markers | The one incidental hit (`site-config.js` comment "SAMPLE PLACEHOLDERS") is a deliberate, buyer-facing code comment describing the intentionally-editable demo stats, not an unresolved fact. |
+| `handoff/grok/blog/`, `handoff/grok/campaign/`, `handoff/grok/growth/`, `seller-pack/drafts/` (all `_URL_PENDING` / `CONFIRMED_PRICE_PENDING` / `CONFIRMED_CURRENCY_PENDING` hits — ~30+ files) | **Intentionally retained, resolved at point of use** | These are draft marketing/copy files authored before the build and before price/currency/publication were confirmed. Rather than mass-editing 30+ historical draft files, each marker is resolved individually at the point a specific piece of copy is promoted into `seller-pack/listing/` (Phase 8), `seller-pack/marketing/` (Phase 14), the portfolio (Phase 11/12), or the blog (Phase 13) — so the resolution is visible in a diff against a known-good fact, per `FINAL-PRODUCT-FACTS.json`. |
+| `EXACT_ETSY_PRODUCT_URL_PENDING_PUBLICATION` specifically | **Manual post-publication action** | Cannot be resolved until the human owner manually publishes the Etsy draft (see Non-Negotiable Rule 1). Every file still carrying this marker after this release must keep it — see `seller-pack/RELEASE-REPORT.md` post-publication checklist. |
+| `UDEMY_COURSE_URL_PENDING` | **Manual, future work — not this release** | The Udemy course is explicitly out of scope to create/publish this release (Non-Negotiable Rules 8–9). Retained as-is in `seller-pack/marketing/udemy-future-course/`. |
+| `CONFIRMED_PRICE_PENDING` / `CONFIRMED_CURRENCY_PENDING` | **Manual post-publication action pending Phase 9** | See Phase 9 (Price and Category) resolution recorded separately. |

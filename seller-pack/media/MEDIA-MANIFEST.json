@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "purpose": "Manifest of all final media captured from the real, publicly deployed Southern Suburbs Builders demo (https://iederees-create.github.io/southern-suburbs-builders-ct/). Every listing image and every video frame is a genuine screenshot of the finished product taken via chrome-devtools MCP against the live URL — no fabricated or mocked UI.",
+    "source_page": "https://iederees-create.github.io/southern-suburbs-builders-ct/",
+    "captured_commit": "66d2dc6",
+    "validated_by": "node scripts/release/validate-media.js seller-pack/media — PASS (ffprobe enabled)",
+    "status": "9 of 10 listing images complete. Image 10 (included files / buyer guide) is pending Phase 7 (buyer package assembly) and will be added once the buyer ZIP contents exist to photograph honestly."
+  },
+  "listing_images": [
+    {
+      "order": 1,
+      "filename": "listing-images/01-cover.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 479547,
+      "purpose": "Product cover — hero section of the live homepage",
+      "alt_text": "Southern Suburbs Builders website template homepage hero, showing the headline 'Built properly, on schedule' with Request a Quote, Call, and WhatsApp Us buttons",
+      "source_page": "/ (hero section)"
+    },
+    {
+      "order": 2,
+      "filename": "listing-images/02-desktop-homepage.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 444940,
+      "purpose": "Desktop homepage — navigation, hero, and trust indicators in context",
+      "alt_text": "Desktop view of the Southern Suburbs Builders template homepage with navigation bar, hero section, and trust indicator bar",
+      "source_page": "/ (top of page, desktop viewport 1440x900)"
+    },
+    {
+      "order": 3,
+      "filename": "listing-images/03-mobile-experience.png",
+      "dimensions": "2000x2000 (letterboxed from a 390px-wide mobile capture)",
+      "format": "PNG",
+      "size_bytes": 723816,
+      "purpose": "Mobile experience — hamburger nav closed, hero adapted to a narrow viewport",
+      "alt_text": "Mobile view of the Southern Suburbs Builders template homepage at a 390px viewport width, showing the responsive hero and hamburger menu icon",
+      "source_page": "/ (mobile viewport 390x844)"
+    },
+    {
+      "order": 4,
+      "filename": "listing-images/04-renovation-planner.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 311191,
+      "purpose": "Renovation Scope & Budget Planner introduction",
+      "alt_text": "The Renovation Scope & Budget Planner section heading and introductory copy, with a link to the Estimate Disclaimer",
+      "source_page": "/#planner (top of section, empty form)"
+    },
+    {
+      "order": 5,
+      "filename": "listing-images/05-structured-inputs.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 309633,
+      "purpose": "Structured project inputs — a real, filled-in example (Claremont Kitchen Revamp)",
+      "alt_text": "The Planner form filled in with an example project: Claremont Kitchen Revamp, Kitchen Renovation, 22 square metres, Standard finish",
+      "source_page": "/#planner (form filled)"
+    },
+    {
+      "order": 6,
+      "filename": "listing-images/06-budget-assumptions.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 481898,
+      "purpose": "Preliminary budget range, complexity indicator, and assumptions output",
+      "alt_text": "Planner results panel showing a measured area of 22 square metres, Low complexity, a preliminary budget range of R312,500 to R700,000, and a list of pricing assumptions",
+      "source_page": "/#planner (results panel, top)"
+    },
+    {
+      "order": 7,
+      "filename": "listing-images/07-quote-summary.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 344438,
+      "purpose": "Full structured text project summary, ready to copy/print/download",
+      "alt_text": "The Planner's generated plain-text project summary in a read-only textarea, including project details, budget range, and the non-binding estimate disclaimer",
+      "source_page": "/#planner (results panel, summary block)"
+    },
+    {
+      "order": 8,
+      "filename": "listing-images/08-whatsapp-email-handoff.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 376488,
+      "purpose": "The explicit-confirmation modal shown before any WhatsApp/email message is sent",
+      "alt_text": "A confirmation dialog titled 'Review before sending' displaying the exact WhatsApp message text, with Confirm & Send and Cancel buttons — nothing is sent without this explicit confirmation",
+      "source_page": "/#planner (after clicking WhatsApp Quote Request)"
+    },
+    {
+      "order": 9,
+      "filename": "listing-images/09-themes-configuration.png",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 457161,
+      "purpose": "Theme switching — Blueprint Navy shown as the second of three included themes",
+      "alt_text": "The homepage hero re-rendered in the Blueprint Navy colour theme, one of three included themes (Concrete & Brass, Cape Clay, Blueprint Navy) selectable from the navigation bar",
+      "source_page": "/ (theme selector set to Blueprint Navy)"
+    },
+    {
+      "order": 10,
+      "filename": "listing-images/10-included-files-buyer-guide.png",
+      "status": "PENDING — Phase 7 (buyer package) not yet assembled",
+      "purpose": "Included files and buyer guide overview",
+      "note": "Will be captured honestly from the actual buyer ZIP contents once Phase 7 builds it — not fabricated ahead of time."
+    }
+  ],
+  "video": [
+    {
+      "filename": "video/etsy-listing-video.mp4",
+      "purpose": "Etsy listing video",
+      "format": "MP4 (H.264, yuv420p, faststart)",
+      "dimensions": "1080x1080 (square)",
+      "duration_seconds": 13.5,
+      "size_bytes": 423980,
+      "content": "A 9-frame slideshow of real screenshots from listing_images 1–9 (before the final square-pad/letterbox step, downscaled and captioned), 1.5s per frame, no audio, concise on-screen captions matching each listing image's purpose",
+      "constraints_met": "Under Etsy's 15-second cap, MP4/H.264, square format",
+      "etsy_upload_status": "Not uploaded via API — see PRODUCT-PACK-VALIDATION.md / RELEASE-REPORT.md for the manual-attachment note if Etsy's official API does not support programmatic video upload for this shop"
+    },
+    {
+      "filename": "video/portfolio-video.mp4",
+      "purpose": "3D-Portfolio case study video (MP4)",
+      "format": "MP4 (H.264, yuv420p, faststart)",
+      "dimensions": "1080x1080 (square)",
+      "duration_seconds": 36,
+      "size_bytes": 468188,
+      "content": "Same 9 real screenshots as the Etsy video, held longer (4s per frame) for a portfolio-appropriate 30–45s runtime"
+    },
+    {
+      "filename": "video/portfolio-video.webm",
+      "purpose": "3D-Portfolio case study video (WebM, for broader browser <video> compatibility)",
+      "format": "WebM (VP9)",
+      "dimensions": "1080x1080 (square)",
+      "duration_seconds": 36,
+      "size_bytes": 710289
+    },
+    {
+      "filename": "video/portfolio-video-poster.png",
+      "purpose": "Poster frame for the portfolio <video> element",
+      "format": "PNG",
+      "dimensions": "1080x1080",
+      "size_bytes": 192139,
+      "content": "First frame of the portfolio video (the cover shot with caption)"
+    }
+  ],
+  "raw_provenance": {
+    "folder": "raw/",
+    "note": "Unprocessed, uncaptioned, un-letterboxed screenshots exactly as captured from the live site (1440x900 desktop / 500x844 mobile), kept for provenance/audit. Includes one extra shot (05-gallery.png, the project gallery section) not used in the final 10-image set but available if a listing image needs to be swapped later."
+  },
+  "capture_method": "chrome-devtools MCP tools (new_page, evaluate_script for scroll positioning and live in-page planner calls, fill/click for real form interaction, take_screenshot) driven against the actual public URL after deployment — not against a local mock or a fabricated UI. Post-processing (square letterbox pad to 2000x2000, caption burn-in, video assembly) done with ffmpeg using the site's own brand colour (#1a1917) as the letterbox fill."
+}

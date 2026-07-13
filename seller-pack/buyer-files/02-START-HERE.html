@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>START HERE — Southern Suburbs Builders Website Template</title>
+<style>
+  body{font-family:system-ui,-apple-system,Arial,sans-serif;max-width:760px;margin:2rem auto;padding:0 1.5rem;line-height:1.6;color:#1c1f24;background:#fff;}
+  h1{color:#8c6b3a;}
+  h2{margin-top:2rem;border-bottom:2px solid #c6a05c;padding-bottom:.3rem;}
+  .step{background:#fdf8ef;border:1px solid #e3cd9e;border-radius:8px;padding:1rem 1.25rem;margin:1rem 0;}
+  code{background:#f0f0f0;padding:.15rem .4rem;border-radius:4px;}
+  .callout{background:#fdeee9;border-left:4px solid #c1592f;padding:1rem 1.25rem;margin:1.5rem 0;}
+</style>
+</head>
+<body>
+<h1>Start Here — Thanks for purchasing!</h1>
+<p>You've purchased the <strong>Southern Suburbs Builders Website Template</strong>: a static HTML/CSS/JavaScript website template for construction and renovation businesses, including a working Renovation Scope &amp; Budget Planner tool. This guide gets it running in a few minutes. It's a digital download — no physical item is shipped.</p>
+
+<div class="callout">
+  <strong>Important:</strong> Every business name, phone number, statistic, testimonial, licence statement, and insurance statement in this template is <strong>fictional sample content</strong>. You must replace it with your own accurate information before publishing a live site. See <code>disclaimer.html</code> and <code>terms.html</code> in the template.
+</div>
+
+<h2>Step 1 — Download and extract the files</h2>
+<div class="step">Download <code>01-SOUTHERN-SUBURBS-BUILDERS-TEMPLATE.zip</code> from your Etsy purchase and extract (unzip) it. You'll get a folder of plain HTML/CSS/JS files — no build tools or installation required.</div>
+
+<h2>Step 2 — Preview it locally</h2>
+<div class="step">Double-click <code>index.html</code> to open it in your browser, or (recommended, for full functionality) run a simple local server from that folder, e.g. <code>python3 -m http.server 8000</code>, then visit <code>http://localhost:8000/</code>.</div>
+
+<h2>Step 3 — Rebrand it (site-config.js)</h2>
+<div class="step">Open <code>site-config.js</code> in any text editor. This one file controls: business name, logo text, tagline, phone, WhatsApp number, email, address, hours, service areas, services, testimonials, FAQs, team, social links, the map embed URL, and the three colour themes. You should not need to touch <code>index.html</code>, <code>style.css</code>, <code>app.js</code>, or <code>planner.js</code> for ordinary changes. Full field-by-field detail is in <code>03-COMPLETE-BUYER-GUIDE.html</code>.</div>
+
+<h2>Step 4 — Configure the Renovation Scope &amp; Budget Planner</h2>
+<div class="step">The <code>planner</code> section of <code>site-config.js</code> controls every rate, finish-level multiplier, trade add-on percentage, complexity multiplier, currency, and contingency percentage the Planner uses. Set <code>planner.budgetEnabled: false</code> to turn off numeric budget estimates entirely — the tool will still produce a scope, trade checklist, and photo checklist. Every figure the Planner outputs is a preliminary, non-binding estimate — see the Estimate Disclaimer page included in the template.</div>
+
+<h2>Step 5 — Choose a theme</h2>
+<div class="step">Set <code>activeTheme</code> in <code>site-config.js</code> to <code>"concrete-brass"</code>, <code>"cape-clay"</code>, or <code>"blueprint-navy"</code> — or edit the colour values directly to create your own.</div>
+
+<h2>Step 6 — Replace images</h2>
+<div class="step">The project gallery ships with clearly labelled placeholder cards ("Replace with a real project photo"), not real photography. Once you have real project photos, set the <code>image</code> field on each entry in the <code>gallery</code> array in <code>site-config.js</code> to your image's file path.</div>
+
+<h2>Step 7 — Publish it</h2>
+<div class="step">Upload the folder to any static host — GitHub Pages, Netlify, Vercel, or your existing web host all work, since this is a static site with no backend or database. See the Deployment section of the Complete Buyer Guide for step-by-step instructions.</div>
+
+<div class="callout">
+  <strong>What is NOT included:</strong> web hosting, a domain name, or installation/setup services. "Hosting" is the server that serves your files to visitors; a "domain" is your website address (e.g. yourbusiness.com). You will need to arrange both yourself — many hosts (like GitHub Pages) offer a free tier suitable for a static site like this one.
+</div>
+
+<h2>Support boundaries</h2>
+<p>This is a self-service digital template. The seller can help with genuine defects in the template code itself. General web-hosting setup, domain registration, and one-on-one customisation coaching are outside the scope of support included with this purchase — see the Support section of the Complete Buyer Guide.</p>
+
+<h2>Need more detail?</h2>
+<p>Open <strong>03-COMPLETE-BUYER-GUIDE.html</strong> for full customisation instructions, deployment steps, the support policy, and asset licence information.</p>
+
+<h2>Questions?</h2>
+<p>Contact the seller through Etsy Messages with your order number.</p>
+</body>
+</html>

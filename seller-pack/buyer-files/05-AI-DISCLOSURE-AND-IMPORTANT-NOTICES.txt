@@ -1,0 +1,67 @@
+AI DISCLOSURE AND IMPORTANT NOTICES
+SOUTHERN SUBURBS BUILDERS WEBSITE TEMPLATE
+============================================
+
+AI DISCLOSURE
+--------------
+This product was developed with the assistance of an AI coding tool,
+Claude Code (Anthropic).
+
+What AI was used for:
+- Generating the HTML, CSS, and JavaScript code for this template,
+  including the Renovation Scope & Budget Planner's calculation engine.
+- Drafting sample/placeholder demo copy (business description, service
+  descriptions, FAQ answers, sample testimonials, legal-page starting
+  text).
+- Drafting this listing's marketing copy, tags, and supporting documents.
+
+What this means for you as a buyer:
+- The Planner's calculation logic has an automated test suite (25 tests)
+  covering area calculations, budget ranges, invalid/zero/negative input
+  handling, and message encoding — you can run it yourself with `npm test`
+  if you have Node.js installed.
+- The full site has been tested for navigation, forms, accordions,
+  responsive layout, and the Planner's explicit-confirmation send flow
+  before listing, including live testing in a real browser (not just
+  automated tests).
+- All sample content (names, statistics, testimonials, licence and
+  insurance statements) is fictional placeholder text and is clearly
+  marked as such throughout the site and in site-config.js. You must
+  replace it with your own accurate, verifiable business information.
+- The legal pages (Privacy Policy, Terms of Service, Estimate Disclaimer)
+  included are generic AI-assisted starting points, not legal advice.
+  Have them reviewed by a qualified professional for your jurisdiction
+  before publishing a live business site.
+- This is a digital download. No physical item is shipped, and delivery is
+  via digital file download only.
+
+ASSET LICENCES
+----------------
+- Fonts: "Inter" and "Fraunces", both loaded from Google Fonts under the
+  SIL Open Font License. No font files are bundled in the download — they
+  load from Google's CDN at runtime, matching the live demo.
+- Icons: emoji characters (no icon font/library dependency) and two
+  original inline SVG assets (favicon, Open Graph share image) created for
+  this template — no third-party icon licence applies.
+- No stock photography is bundled. The project gallery uses labelled
+  placeholder cards, not licensed photography, so there is nothing to
+  clear before you replace them with your own real project photos.
+
+SUPPORT POLICY
+----------------
+Included: help with genuine defects in the template code as delivered
+(something that doesn't work as documented in this guide).
+
+Not included: web hosting setup, domain registration/DNS configuration,
+one-on-one customisation coaching, or building functionality beyond what
+is described in this listing.
+
+How to reach support: Etsy Messages, with your order number.
+
+ESTIMATE DISCLAIMER (SUMMARY)
+--------------------------------
+The Renovation Scope & Budget Planner included in this template produces
+preliminary, non-binding estimates only, based on sample rate bands you
+configure in site-config.js. Nothing it produces is a quotation, offer, or
+contract. Full text is on the Estimate Disclaimer page inside the template
+(disclaimer.html) — do not remove this disclaimer when customising.

@@ -4,7 +4,7 @@
     "source_page": "https://iederees-create.github.io/southern-suburbs-builders-ct/",
     "captured_commit": "66d2dc6",
     "validated_by": "node scripts/release/validate-media.js seller-pack/media — PASS (ffprobe enabled)",
-    "status": "9 of 10 listing images complete. Image 10 (included files / buyer guide) is pending Phase 7 (buyer package assembly) and will be added once the buyer ZIP contents exist to photograph honestly."
+    "status": "10 of 10 listing images complete."
   },
   "listing_images": [
     {
@@ -100,9 +100,12 @@
     {
       "order": 10,
       "filename": "listing-images/10-included-files-buyer-guide.png",
-      "status": "PENDING — Phase 7 (buyer package) not yet assembled",
+      "dimensions": "2000x2000",
+      "format": "PNG",
+      "size_bytes": 397170,
       "purpose": "Included files and buyer guide overview",
-      "note": "Will be captured honestly from the actual buyer ZIP contents once Phase 7 builds it — not fabricated ahead of time."
+      "alt_text": "A list of the 5 files included in the digital download: the template ZIP, START-HERE guide, Complete Buyer Guide, LICENSE, and AI Disclosure & Important Notices",
+      "source_page": "Not a website screenshot — an honest text rendering of the actual buyer-files/ directory built in Phase 7, listing the real filenames"
     }
   ],
   "video": [

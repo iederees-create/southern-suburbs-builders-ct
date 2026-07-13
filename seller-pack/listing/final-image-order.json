@@ -1,0 +1,12 @@
+[
+  { "order": 1, "file": "seller-pack/media/listing-images/01-cover.png", "is_cover": true },
+  { "order": 2, "file": "seller-pack/media/listing-images/02-desktop-homepage.png" },
+  { "order": 3, "file": "seller-pack/media/listing-images/03-mobile-experience.png" },
+  { "order": 4, "file": "seller-pack/media/listing-images/04-renovation-planner.png" },
+  { "order": 5, "file": "seller-pack/media/listing-images/05-structured-inputs.png" },
+  { "order": 6, "file": "seller-pack/media/listing-images/06-budget-assumptions.png" },
+  { "order": 7, "file": "seller-pack/media/listing-images/07-quote-summary.png" },
+  { "order": 8, "file": "seller-pack/media/listing-images/08-whatsapp-email-handoff.png" },
+  { "order": 9, "file": "seller-pack/media/listing-images/09-themes-configuration.png" },
+  { "order": 10, "file": "seller-pack/media/listing-images/10-included-files-buyer-guide.png" }
+]

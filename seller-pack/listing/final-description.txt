@@ -1,0 +1,67 @@
+CONSTRUCTION WEBSITE TEMPLATE WITH RENOVATION SCOPE & BUDGET PLANNER
+
+A conversion-focused website template for builders, renovation contractors, extension specialists and home-improvement businesses who want better-structured enquiries instead of another static brochure page.
+
+THIS IS A DIGITAL DOWNLOAD. No physical item ships.
+
+CORE DIFFERENTIATOR — THE RENOVATION SCOPE & BUDGET PLANNER
+An interactive tool that helps visitors define their project — project type, dimensions or total floor area, number of rooms and storeys, finish level (Essential/Standard/Premium/Custom), scope of work (demolition, structural alterations, plumbing, electrical, waterproofing, roofing, painting, flooring), site access, occupancy, preferred start date, target budget, suburb and contact details — then generates:
+• a measured project area
+• a preliminary scope summary
+• a configurable budget range
+• a complexity indicator (Low/Medium/High)
+• a trade checklist
+• a list of pricing assumptions
+• a missing-information checklist
+• a photo checklist for the site visit
+• a site-inspection recommendation
+• a full structured project summary, ready to copy, print, or download
+
+The summary can be handed off via WhatsApp or email — the exact message is always shown to the visitor first, in an on-screen confirmation dialog, and is only sent if they click "Confirm & Send." Nothing is sent automatically, and there is no backend or database — this is a purely front-end, static tool.
+
+IMPORTANT: Planner output is PRELIMINARY GUIDANCE ONLY. It is NOT a binding quotation, fixed price, or formal tender. Actual pricing depends on final drawings, material selections, labour availability, regulatory approvals, and site conditions confirmed during a site inspection.
+
+WHO IT'S FOR
+Builders, construction companies, renovation contractors, extension specialists, project managers, paving and boundary-wall contractors, and home-improvement businesses — or a web designer building one end-business construction site.
+
+WHAT YOU GET
+• Complete static website source (HTML, CSS, JavaScript — no build step, no framework)
+• Central site-config.js business configuration (name, contact, services, service areas, testimonials, FAQ, and every Planner rate/multiplier)
+• The Renovation Scope & Budget Planner, with an automated test suite you can run yourself
+• Three built-in colour themes (Concrete & Brass, Cape Clay, Blueprint Navy)
+• Responsive layout, tested at desktop and mobile widths
+• Privacy Policy, Terms of Service, and Estimate Disclaimer starter pages (not legal advice)
+• A custom 404 page
+• START-HERE guide, Complete Buyer Guide, Licence, and AI Disclosure & Important Notices
+
+TECHNICAL REQUIREMENTS
+A modern web browser and a text editor. No database, no server-side runtime, and no build tools are required to run the site. Any static file host works (see Deployment, below).
+
+HOW IT WORKS
+1. Download and unzip the template
+2. Open site-config.js and enter your real business details
+3. Set your own Renovation Scope & Budget Planner rates, finish multipliers, and currency (or disable numeric estimates entirely with one setting)
+4. Preview locally and test the WhatsApp/email handoff on mobile
+5. Replace the sample gallery, testimonials, and stats with your own, true content
+6. Deploy to any static host
+
+DEPLOYMENT
+Upload the files to GitHub Pages, Netlify, Vercel, or your existing web host — all work, since this is a static site. Hosting and a domain name are NOT included; you will need to arrange these yourself (many static hosts, including GitHub Pages, offer a free tier).
+
+FICTIONAL DEMO CONTENT
+The demo business name, contact details, statistics, testimonials, team profiles, and licence/insurance statements are all fictional sample content, clearly labelled throughout the site. Replace them with your own accurate, verifiable information before publishing. Do not publish "fully insured," "certified," or "guaranteed" claims unless true for your business.
+
+SUPPORT
+Included: help with genuine defects in the template code as delivered. Not included: web hosting/DNS setup, one-on-one customisation coaching, or custom development beyond what's described here. Contact via Etsy Messages with your order number.
+
+LICENCE
+One licence covers one end-business website (yours, or a single client's). No resale, redistribution, or re-upload to another template marketplace. Full terms in LICENSE.txt inside the download.
+
+AI DISCLOSURE
+This product's code and listing materials were developed with the assistance of AI tools (Claude Code by Anthropic for the website and code; Grok by xAI for the marketing/commerce copy). The Planner's calculation logic is covered by an automated test suite, and the finished site was tested live in a real browser before listing. See AI-DISCLOSURE-AND-IMPORTANT-NOTICES.txt inside the download for full detail.
+
+REFUNDS
+As an instantly delivered digital item, refunds are subject to Etsy's digital-item policies and applicable consumer-protection law — generally considered for genuine file defects, not change-of-mind or dissatisfaction with sample content designed to be replaced.
+
+LIVE DEMO
+https://iederees-create.github.io/southern-suburbs-builders-ct/
